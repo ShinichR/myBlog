@@ -1,0 +1,24 @@
+
+{{template "header" .}}
+
+
+<div id="wiki_title">{{.pageTitle}}</div>
+
+<div id="index">
+
+	
+	
+	<h2 id="intro"><a href="/" style="font-size:12px;float:right;line-height:20px">更多</a> 文章</h2>
+	<ul>
+		
+		{{range .list}}
+		<li class="pagelist">
+			<a href="/view/{{.Title}}">{{.Title}}</a> <span>   {{date .PostTime "Y-m-d"}}</span>
+		</li>
+		{{end}}
+		
+	</ul>
+	<div class="clearfix"></div>
+	
+
+{{template "footer" .}}

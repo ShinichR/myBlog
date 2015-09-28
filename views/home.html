@@ -1,0 +1,24 @@
+
+{{template "header" .}}
+
+
+<div id="wiki_title">shinichr</div>
+
+<div id="index">
+
+	
+	
+	
+	<h2 id="intro"><a href="/" style="font-size:12px;float:right;line-height:20px">更多</a>w文章</h2>
+	<ul>
+		
+		{{range .list}}
+		<li class="pagelist">
+			<a href="/">{{.list.Title}}</a> <span>2015-09-15</span>
+		</li>
+		{{end}}
+
+	</ul>
+	<div class="clearfix"></div>
+	
+{{template "footer" .}}

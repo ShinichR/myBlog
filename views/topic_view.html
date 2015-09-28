@@ -1,0 +1,13 @@
+{{template "header" .}}
+            
+<div id="header">
+    <div id="post-nav"><a href="/">Home</a>&nbsp;»&nbsp;<a href="{{.category.Permalink}}">{{.Topic.Category}}</a>&nbsp;»&nbsp;{{.Topic.Title}}</div>
+</div>
+<div class="clearfix"></div>
+
+<div id="title">{{.Topic.Title}}</div>
+<div id="content">
+{{str2html .Topic.Content}}
+</div>
+
+{{template "footer" .}}

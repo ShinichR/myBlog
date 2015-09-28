@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>Shinichr - Add article</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="./../../static/css/style.css">
+  </head>
+  
+  <body>
+     
+  <!-- header -->
+      <header>
+      {{template "header" .}}
+      </header>
+   
+    <div id="wrapper">
+      <div class="container_16">
+        <section id="posts" class="prefix_1 grid_9">
+
+         
+          <article>
+            <form method="POST" action="/topic?op=add">
+               <div class="time"><p>Dec<br><span>27</span></p></div>
+               <h2>文章标题:
+               <input type="author" class="reply2" name="title" value="">
+               </h2>
+                <h2>文章类型:
+               <input type="author" class="reply2" name="category" value="">
+               </h2>
+                <h2>文章标签:
+               <input type="author" class="reply2" name="label" value="">
+               </h2>
+               <h2>文章内容:</h2>
+               <textarea name="content" style="width:800px;height:200px;"></textarea>
+
+               <button type="submit" class="btn btn-default">添加文章</button>
+            </form>
+          </article>
+          </section>
+      </div>
+    </div>
+
+
+    <script type="text/javascript" src="http://cdn.staticFile.org/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="./../static/js/bootstrap.min.js"></script>
+    
+
+    <script charset="utf-8" src="./../static/js/kindeditor-min.js"></script>
+    <script charset="utf-8" src="./../static/js/zh_CN.js"></script>
+    <script>
+      KindEditor.ready(function(K) {
+        K.create('textarea[name="content"]', {
+          autoHeightMode : true,
+          afterCreate : function() {
+            this.loadPlugin('autoheight');
+          }
+        });
+      });
+    </script>
+
+
+  </body>
+</html>

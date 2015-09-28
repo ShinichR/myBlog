@@ -1,0 +1,51 @@
+
+<html>
+  <head>
+      {{template "header"}}
+	  <title>登录 - shinichr 博客</title>
+
+  </head>
+
+  <body>
+  	    <div class="container" style="width:500px">
+  	    	<form method="post">
+  	    	  <div class="form-group">
+  	    	    <label for="exampleInputEmail1">Account</label>
+  	    	    <input  class="form-control"  placeholder="Enter Account" name="uname">
+  	    	  </div>
+  	    	  <div class="form-group">
+  	    	    <label for="exampleInputPassword1">Password</label>
+  	    	    <input type="password" class="form-control"  placeholder="Password" name="passwd">
+  	    	  </div>
+  	    	 
+  	    	  <div class="checkbox">
+  	    	    <label>
+  	    	      <input type="checkbox" name="autoLogin">自动登录
+  	    	    </label>
+  	    	  </div>
+  	    	  <button type="submit" class="btn btn-default">Submit</button>
+  	    	</form>
+  	    
+  	    	{{if .LoginErr}}
+  	    	 <div class="form-group">
+  	    		 登录失败
+  	    	</div>
+  	    	{{end}}
+  	    </div>
+         <script type="text/javascript">
+            function checkInput(){
+              var name = document.getElementById("uname");
+              if （name.value.length == 0){
+                  alert("请输入用户名");
+                  return false;
+              }
+              var passwd = document.getElementById("passwd");
+              if passwd.value.length == 0){
+                  alert("请输入密码");
+                  return false;
+              }
+              return true;
+            }
+          </script>
+  </body>
+</html>

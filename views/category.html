@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html crossriderapp2258="true"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- title -->
+    <title>Shinichr - Blog</title>
+
+    <!-- meta -->
+    <meta charset="UTF-8">
+
+    <!-- links -->
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../static/css/style.css">
+  <script type="text/javascript" src="http://cdn.staticFile.org/jquery/2.0.3/jquery.min.js"></script>
+
+    <!-- scripts -->
+
+    <!-- IE Hacks -->
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    </head>
+    <body class="home blog">
+     
+      <!-- header -->
+      <header>
+         {{template "header" .}}
+      </header>
+     
+    <!-- wrapper -->
+
+    <div id="wrapper">
+      
+      <div class="container_16">
+        <section id="posts" class="prefix_1 grid_9">
+
+           {{range .Categories}}
+          <article>
+            
+            <h2><a href="/topic/view/{{.Id}}" >{{.Title}}</a></h2>
+            <p class="info">{{date .Created "Y-m-d H:i:s"}}</p>
+            <div class="time"><p>{{date .Created "m"}} <br><span>{{date .Created "d"}}</span></p></div>
+
+            <div class="clear"></div>
+            <p class="bottom_info"><a href="#" >{{.TopicCount}} topic »</a></p>
+
+            <p class="delete"><a href="/category?op=del&id={{.Id}}" >delete category</a></p>
+
+          </article>
+          {{end}}
+        
+                 {{template "righter" .}}
+
+        
+        </div>
+  
+  </div>
+    <!-- footer -->
+    {{template "footer" .}}
+</body>
+
+
+
+</html>
