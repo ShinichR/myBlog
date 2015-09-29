@@ -9,7 +9,7 @@
 
       <hr />
       
-      {{str2html .post.Content}}
+      {{.post.Content | markdown}}
 
     </section>
   </div>

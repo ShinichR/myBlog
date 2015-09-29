@@ -132,6 +132,7 @@ func (this *MainController) View() {
 	)
 
 	Title := this.Ctx.Input.Param(":Title")
+	beego.Debug(";Title=", Title)
 	if Title != "" {
 		post.Title = Title
 		err = post.Read("Title")

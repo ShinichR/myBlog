@@ -45,16 +45,41 @@
 			<tr>
 				<th>内容</th>
 				<td>
-					<script type="text/javascript" charset="utf-8">
-						window.UEDITOR_HOME_URL = "/static/ueditor/";
-					</script>
-					<script type="text/javascript" src="/static/ueditor/ueditor.config.js"></script>
-					<script type="text/javascript" src="/static/ueditor/ueditor.all.min.js"></script>
-					<textarea id="content" name="content">{{str2html .post.Content}}</textarea>
-					<script type="text/javascript" charset="utf-8">
-						var options = {"fileUrl":"/admin/article/upload","filePath":"","imageUrl":"/admin/article/upload","imagePath":"","initialFrameWidth":"90%","initialFrameHeight":"400"};
-						var ue = UE.getEditor("content", options);
-					</script>
+					
+				
+					<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	
+					<!-- Ghosty-ness markdowny-ness -->
+					<script  type="text/javascript"  src="/static/js/ghostdown.js"></script>	
+					<link href="/static/css/ghostdown.css" media="all" rel="stylesheet">
+					
+					<div class="features">
+		
+						<section class="editor">
+							<div class="outer">
+								
+								<div class="editorwrap">
+									<section class="entry-markdown">
+										<header class="floatingheader">
+											&nbsp;&nbsp; Markdown 
+										</header>
+										<section class="entry-markdown-content">
+											<textarea id="entry-markdown" name="content">{{.post.Content}}</textarea>
+										</section>
+									</section>
+									<section class="entry-preview active">
+										<header class="floatingheader">
+										  &nbsp;&nbsp; Preview <span class="entry-word-count">0 words</span>
+										</header>
+										<section class="entry-preview-content">
+											<div class="rendered-markdown"></div>
+										</section>
+									</section>
+								</div>
+							</div>
+						</section>
+		
+					</div>
 				</td>
 			</tr>
 		</tbody>
